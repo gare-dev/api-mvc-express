@@ -6,7 +6,9 @@ const clienteController = {
       const clientes = await ClienteModel.getAllClients();
       res.status(200).json(clientes);
     } catch (e) {
-      res.status(500).json({ message: "Erro ao obter lista de clientes" });
+      res
+        .status(500)
+        .json({ message: "Erro ao obter lista de clientes", error: e });
     }
   },
 
